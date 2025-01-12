@@ -48,6 +48,7 @@ public class ATMSystem {
         for (userAccount user : userAccounts) {
             if (user.getAccountNum().equals(accountNum) && user.getPassword().equals(password)) {
                 tempUser = user;
+                System.out.println("your account num is : " + tempUser.getAccountNum());
                 attempts = 0;
                 break;
             } else {
@@ -64,7 +65,7 @@ public class ATMSystem {
     }
 
     public boolean isLocked() {
-        if (attempts == 3 && lockTime>=System.currentTimeMillis()) {
+        if (attempts == 3 && lockTime >= System.currentTimeMillis()) {
             isLocked = true;
         } else {
             isLocked = false;
@@ -162,7 +163,7 @@ public class ATMSystem {
                 case 6: // logout
                     Main main = new Main();
                     main.userAccountCreationAndLogin();
-                    b=false;
+                    b = false;
                     break;
             }
         }
