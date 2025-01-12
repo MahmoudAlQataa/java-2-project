@@ -157,7 +157,7 @@ public class ATMSystem {
                 case 5: // View My Transaction History
                     tempUser.viewTransactionHistory(tempUser.getAccountNum());
                     break;
-                case 6: // Back
+                case 6: // logout
                     Main main = new Main();
                     main.userAccountCreationAndLogin();
                     break;
