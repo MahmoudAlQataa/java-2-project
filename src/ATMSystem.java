@@ -124,10 +124,8 @@ public class ATMSystem {
 
     public void performTransactions() throws IOException { //(Deposit , Withdraw , View Transaction History) ###DONE###
         Scanner s = new Scanner(System.in);
-        boolean b = true;
-        while (b) {
             System.out.println("-----------------------------");
-            System.out.println("1-Deposit\n2-Withdraw\n3-Check Balance\n4-Change Password\n5-View My Transaction History\n6-Back");
+            System.out.println("1-Deposit\n2-Withdraw\n3-Check Balance\n4-Change Password\n5-View My Transaction History\n6-logout");
             int a = s.nextInt();
             switch (a) {
                 case 1: // Deposit
@@ -160,11 +158,12 @@ public class ATMSystem {
                     tempUser.viewTransactionHistory(tempUser.getAccountNum());
                     break;
                 case 6: // Back
-                    b = false;
+                    Main main = new Main();
+                    main.userAccountCreationAndLogin();
                     break;
             }
         }
-    }
+
 
     public void updateTransFile(String newLine) throws IOException { //(after Transaction)   ###DONE###
         fileHandler.wrriteFile(new File("TransactionHistory.txt"), newLine);

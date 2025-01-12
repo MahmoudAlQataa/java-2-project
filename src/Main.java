@@ -98,7 +98,6 @@ public class Main {
                     break;
                 case 2: // Show All Transaction History
                     atmSystem.tempUser.viewAllTransactionHistory();
-//                    fileHandler.readFile(new File("TransactionHistory.txt"));
                     break;
                 case 3: // Edit File
                     System.out.println("Enter the New Line : ");
